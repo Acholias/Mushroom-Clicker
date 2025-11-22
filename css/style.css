@@ -921,7 +921,7 @@ footer
 .grade-panel
 {
 	position: fixed;
-	right: 80px;
+	right: 50px;
 	bottom: 80px;
 	z-index: 5;
 }
@@ -931,6 +931,7 @@ footer
 	perspective: 1000px;
 	width: 260px;
 	height: 320px;
+	position: relative;
 }
 
 .panel-flip
@@ -938,8 +939,9 @@ footer
 	width: 100%;
 	height: 100%;
 	position: relative;
-	transition: transform 0.8s;
+	transition: transform 0.9s;
 	transform-style: preserve-3d;
+	transform-origin: center center;
 }
 
 .panel-flip.flipped
@@ -1248,9 +1250,9 @@ footer
 {
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	gap: 6px;
 	background: rgba(255, 249, 230, 0.1);
-	padding: 6px 10px;
+	padding: 5px 8px;
 	border-radius: 8px;
 	border: 2px solid rgba(212, 165, 116, 0.3);
 	transition: all 0.2s ease;
@@ -1266,34 +1268,38 @@ footer
 .leaderboard-item .rank
 {
 	font-family: 'Comic Sans MS', cursive, sans-serif;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: bold;
 	color: #fff9e6;
-	min-width: 30px;
+	min-width: 25px;
 	text-align: center;
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .leaderboard-item .player-emoji
 {
-	font-size: 16px;
-	margin-right: 8px;
+	font-size: 14px;
+	margin-right: 5px;
 	filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
 }
 
 .leaderboard-item .player-name
 {
 	font-family: 'Comic Sans MS', cursive, sans-serif;
-	font-size: 13px;
+	font-size: 11px;
 	color: #fff9e6;
 	flex: 1;
 	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 100px;
 }
 
 .leaderboard-item .player-score
 {
 	font-family: 'Comic Sans MS', cursive, sans-serif;
-	font-size: 11px;
+	font-size: 10px;
 	font-weight: bold;
 	color: #fbbf24;
 	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
