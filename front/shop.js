@@ -1,7 +1,7 @@
 let playerName = localStorage.getItem('mushroomPlayerName') || 'Vous';
 let currentDifficulty = localStorage.getItem('mushroomDifficulty') || 'facile';
 let mushrooms = parseInt(localStorage.getItem('mushroomCount')) || 0;
-let cash = parseInt(localStorage.getItem('mushroomCash')) || 0;
+let cash = parseInt(localStorage.getItem('mushroomCash')) || 300	;
 let equippedCosmetic = localStorage.getItem('mushroomCosmetic') || '🍄';
 let ownedCosmetics = JSON.parse(localStorage.getItem('mushroomOwnedCosmetics') || '["🍄"]');
 
@@ -14,21 +14,31 @@ function updateCashDisplay()
 	}
 }
 
-// Fonction pour mettre à jour l'état des cosmétiques
 function updateCosmeticsUI() {
 	document.querySelectorAll('.cosmetic-item').forEach(item => {
 		const btn = item.querySelector('.cosmetic-btn');
 		const emoji = btn.dataset.emoji || '🍄';
+		const price = parseInt(btn.dataset.price) || 0;
 		
 		if (ownedCosmetics.includes(emoji)) {
-			item.classList.remove('locked');
+			// Cosmétique déjà acheté
+			item.classList.remove('locked', 'affordable');
+			item.classList.add('purchased');
 			
-			if (emoji === equippedCosmetic) {
-				btn.classList.add('equipped');
-				btn.innerHTML = 'Équipé';
+			btn.classList.add('equipped');
+			btn.innerHTML = 'Possédé';
+		} else {
+			// Cosmétique non acheté
+			item.classList.remove('purchased');
+			
+			if (cash >= price) {
+				// Assez de cash : vert
+				item.classList.remove('locked');
+				item.classList.add('affordable');
 			} else {
-				btn.classList.remove('equipped');
-				btn.innerHTML = 'Équiper';
+				// Pas assez de cash : gris locked
+				item.classList.remove('affordable');
+				item.classList.add('locked');
 			}
 		}
 	});

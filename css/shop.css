@@ -387,6 +387,62 @@
 	opacity: 0.6;
 }
 
+/* Cosmétique déjà acheté */
+.cosmetic-item.purchased
+{
+	background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+	border-color: #5a6268;
+	box-shadow: 0 4px 0 #4a5359, 0 5px 10px rgba(0, 0, 0, 0.2);
+	opacity: 0.7;
+	position: relative;
+}
+
+.cosmetic-item.purchased::after
+{
+	content: '✖';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 120px;
+	color: rgba(231, 76, 60, 0.7);
+	z-index: 5;
+	pointer-events: none;
+	text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.cosmetic-item.purchased:hover
+{
+	transform: none;
+	box-shadow: 0 4px 0 #4a5359, 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Cosmétique disponible (assez de cash) */
+.cosmetic-item.affordable
+{
+	background: linear-gradient(135deg, #a8e6cf 0%, #7ed6a0 100%);
+	border-color: #27ae60;
+	box-shadow: 0 4px 0 #1e8449, 0 5px 10px rgba(39, 174, 96, 0.3);
+	animation: pulse-green 2s ease-in-out infinite;
+}
+
+.cosmetic-item.affordable:hover
+{
+	box-shadow: 0 6px 0 #1e8449, 0 7px 15px rgba(39, 174, 96, 0.5);
+}
+
+@keyframes pulse-green
+{
+	0%, 100%
+	{
+		box-shadow: 0 4px 0 #1e8449, 0 5px 10px rgba(39, 174, 96, 0.3);
+	}
+	50%
+	{
+		box-shadow: 0 4px 0 #1e8449, 0 5px 15px rgba(39, 174, 96, 0.6), 0 0 20px rgba(39, 174, 96, 0.4);
+	}
+}
+
 .cosmetic-preview
 {
 	font-size: 45px;
