@@ -69,6 +69,21 @@
 	animation: grade-pulse 2s ease-in-out infinite;
 }
 
+/* animations de la flèche pour l'accès au LeaderBoard */
+@keyframes pulse-arrow
+{
+	0%, 100%
+	{
+		transform: scale(1);
+		opacity: 0.85;
+	}
+	50%
+	{
+		transform: scale(1.2);
+		opacity: 1;
+	}
+}
+
 /* Animation des étincelles */
 @keyframes sparkle
 {
@@ -248,5 +263,17 @@
 	}
 	20%, 40%, 60%, 80% {
 		transform: translateX(10px);
+	}
+}
+
+@keyframes pulse-green
+{
+	0%, 100%
+	{
+		box-shadow: 0 4px 0 #1e8449, 0 5px 10px rgba(39, 174, 96, 0.3);
+	}
+	50%
+	{
+		box-shadow: 0 4px 0 #1e8449, 0 5px 15px rgba(39, 174, 96, 0.6), 0 0 20px rgba(39, 174, 96, 0.4);
 	}
 }

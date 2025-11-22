@@ -3,7 +3,7 @@ body
 	font-family: Arial, sans-serif;
 	overflow-y: hidden;
 	overflow-x: hidden;
-	background-image: url(../img/background.png);
+	background-image: url(../img/background-title.png);
 	background-size: cover;
     background-repeat: no-repeat;
 	background-position: center;
@@ -155,11 +155,11 @@ footer
 	font-size: 24px;
 	font-weight: bold;
 	color: #fff;
-	background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
-	border: 5px solid #6c3483;
+	background: linear-gradient(135deg, #8b5a3c 0%, #6d4423 100%);
+	border: 5px solid #4a2f1a;
 	border-radius: 20px;
 	cursor: pointer;
-	box-shadow: 0 8px 0 #512e5f, 0 10px 20px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 8px 0 #3a2316, 0 10px 20px rgba(0, 0, 0, 0.4);
 	transition: all 0.2s ease;
 	z-index: 1000;
 }
@@ -167,13 +167,13 @@ footer
 .shop-access-btn:hover
 {
 	transform: translateY(-3px);
-	box-shadow: 0 11px 0 #512e5f, 0 13px 25px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 11px 0 #3a2316, 0 13px 25px rgba(0, 0, 0, 0.5);
 }
 
 .shop-access-btn:active
 {
 	transform: translateY(4px);
-	box-shadow: 0 2px 0 #512e5f, 0 3px 5px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 2px 0 #3a2316, 0 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 .shop-icon
@@ -190,17 +190,17 @@ footer
 .cash-counter
 {
 	position: fixed;
-	bottom: 125px;
+	bottom: 125px;	
 	right: 360px;
 	display: flex;
 	align-items: center;
 	gap: 10px;
 	padding: 12px 25px;
 	font-family: 'Comic Sans MS', cursive, sans-serif;
-	background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-	border: 4px solid #15803d;
+	background: linear-gradient(135deg, #52b788 0%, #40916c 100%);
+	border: 4px solid #2d6a4f;
 	border-radius: 18px;
-	box-shadow: 0 5px 0 #14532d, 0 6px 12px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 5px 0 #1b4332, 0 6px 12px rgba(0, 0, 0, 0.3);
 	z-index: 1000;
 }
 
@@ -981,13 +981,13 @@ footer
 .panel-flip-btn
 {
 	position: absolute;
-	top: 8px;
-	right: 8px;
+	top: 12px;
+	right: 12px;
 	background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
 	border: 3px solid #d97706;
 	border-radius: 50%;
-	width: 36px;
-	height: 36px;
+	width: 30px;
+	height: 30px;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -995,6 +995,7 @@ footer
 	transition: all 0.3s ease;
 	z-index: 10;
 	box-shadow: 0 4px 0 #b45309, 0 5px 10px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+	animation: pulse-arrow 2s ease-in-out infinite;
 }
 
 .panel-flip-btn:hover

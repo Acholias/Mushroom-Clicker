@@ -788,7 +788,6 @@ function createCashParticles(amount)
 		}, i * 15);
 	}
 	
-	// Afficher le montant gagné
 	const amountDisplay = document.createElement('div');
 	amountDisplay.className = 'cash-amount-display';
 	amountDisplay.textContent = '+' + amount + ' 💵';
