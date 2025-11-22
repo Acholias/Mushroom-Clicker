@@ -908,7 +908,7 @@ function updateGrade()
 	else
 	{
 		progressBar.style.width = '100%';
-		progressBar.style.backgroundColor = '#dc2626'; // Rouge foncé pour le max
+		progressBar.style.backgroundColor = '#dc2626';
 		progressBar.style.boxShadow = '0 0 15px rgba(220, 38, 38, 0.6), inset 0 2px 3px rgba(255, 255, 255, 0.4), inset 0 -2px 3px rgba(0, 0, 0, 0.3)';
 		document.getElementById('grade-next').textContent = 'Grade Maximum !';
 		document.getElementById('grade-percentage').textContent = '100%';

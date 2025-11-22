@@ -1,7 +1,7 @@
 let playerName = localStorage.getItem('mushroomPlayerName') || 'Vous';
 let currentDifficulty = localStorage.getItem('mushroomDifficulty') || 'facile';
 let mushrooms = parseInt(localStorage.getItem('mushroomCount')) || 0;
-let cash = parseInt(localStorage.getItem('mushroomCash')) || 300	;
+let cash = parseInt(localStorage.getItem('mushroomCash')) || 0	;
 let equippedCosmetic = localStorage.getItem('mushroomCosmetic') || '🍄';
 let ownedCosmetics = JSON.parse(localStorage.getItem('mushroomOwnedCosmetics') || '["🍄"]');
 
