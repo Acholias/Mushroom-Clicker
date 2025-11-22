@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Mushroom Clicker</title>
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍄</text></svg>">
+	<link	rel="stylesheet" href="../css/style.css">
+	<link	rel="stylesheet" href="../css/animation.css">
+</head>
+
+<body>
+	<div class="upgrades-panel">
+		<div class="merchant-head">
+			<div class="merchant-mushroom">🍄</div>
+			<div class="merchant-face">😊</div>
+			<div class="merchant-hat">🎩</div>
+		</div>
+		<h2 class="upgrades-title">UPGRADES</h2>
+		<div class="upgrades-list">
+			<button class="upgrade-btn" id="auto-clicker-btn">
+				<div class="upgrade-info">
+					<span class="upgrade-icon">⚡</span>
+					<div class="upgrade-details">
+						<span class="upgrade-name">Auto-Clicker</span>
+						<span class="upgrade-description">+2 mushroom/sec</span>
+					</div>
+				</div>
+				<div class="upgrade-cost">
+					<span class="cost-value">50</span>
+					<span class="cost-icon">🍄</span>
+				</div>
+			</button>
+			
+			<button class="upgrade-btn" id="double-click-btn">
+				<div class="upgrade-info">
+					<span class="upgrade-icon">💪</span>
+					<div class="upgrade-details">
+						<span class="upgrade-name">Double Click</span>
+						<span class="upgrade-description">x2 par clic</span>
+					</div>
+				</div>
+				<div class="upgrade-cost">
+					<span class="cost-value">100</span>
+					<span class="cost-icon">🍄</span>
+				</div>
+			</button>
+			
+			<button class="upgrade-btn" id="super-farm-btn">
+				<div class="upgrade-info">
+					<span class="upgrade-icon">🌾</span>
+					<div class="upgrade-details">
+						<span class="upgrade-name">Super Farm</span>
+						<span class="upgrade-description">+15 mushroom/sec</span>
+					</div>
+				</div>
+				<div class="upgrade-cost">
+					<span class="cost-value">500</span>
+					<span class="cost-icon">🍄</span>
+				</div>
+			</button>
+			
+			<button class="upgrade-btn" id="mega-boost-btn">
+				<div class="upgrade-info">
+					<span class="upgrade-icon">🚀</span>
+					<div class="upgrade-details">
+						<span class="upgrade-name">Mega Boost</span>
+						<span class="upgrade-description">x3 par clic</span>
+					</div>
+				</div>
+				<div class="upgrade-cost">
+					<span class="cost-value">1000</span>
+					<span class="cost-icon">🍄</span>
+				</div>
+			</button>
+
+			<button class="upgrade-btn" id="turbo-farm-btn">
+				<div class="upgrade-info">
+					<span class="upgrade-icon">🌪️</span>
+					<div class="upgrade-details">
+						<span class="upgrade-name">Turbo Farm</span>
+						<span class="upgrade-description">+100 mushroom/sec</span>
+					</div>
+				</div>
+				<div class="upgrade-cost">
+					<span class="cost-value">5000</span>
+					<span class="cost-icon">🍄</span>
+				</div>
+			</button>
+
+			<button class="upgrade-btn" id="ultra-click-btn">
+				<div class="upgrade-info">
+					<span class="upgrade-icon">🔥</span>
+					<div class="upgrade-details">
+						<span class="upgrade-name">Ultra Click</span>
+						<span class="upgrade-description">x5 par clic</span>
+					</div>
+				</div>
+				<div class="upgrade-cost">
+					<span class="cost-value">10000</span>
+					<span class="cost-icon">🍄</span>
+				</div>
+			</button>
+
+			<button class="upgrade-btn" id="mega-farm-btn">
+				<div class="upgrade-info">
+					<span class="upgrade-icon">🏭</span>
+					<div class="upgrade-details">
+						<span class="upgrade-name">Mega Farm</span>
+						<span class="upgrade-description">+750 mushroom/sec</span>
+					</div>
+				</div>
+				<div class="upgrade-cost">
+					<span class="cost-value">50000</span>
+					<span class="cost-icon">🍄</span>
+				</div>
+			</button>
+
+			<button class="upgrade-btn" id="god-click-btn">
+				<div class="upgrade-info">
+					<span class="upgrade-icon">✨</span>
+					<div class="upgrade-details">
+						<span class="upgrade-name">God Click</span>
+						<span class="upgrade-description">x10 par clic</span>
+					</div>
+				</div>
+				<div class="upgrade-cost">
+					<span class="cost-value">100000</span>
+					<span class="cost-icon">🍄</span>
+				</div>
+			</button>
+
+			<button class="upgrade-btn" id="industrial-farm-btn">
+				<div class="upgrade-info">
+					<span class="upgrade-icon">🏢</span>
+					<div class="upgrade-details">
+						<span class="upgrade-name">Industrial Farm</span>
+						<span class="upgrade-description">+5K mushroom/sec</span>
+					</div>
+				</div>
+				<div class="upgrade-cost">
+					<span class="cost-value">500000</span>
+					<span class="cost-icon">🍄</span>
+				</div>
+			</button>
+
+			<button class="upgrade-btn" id="quantum-click-btn">
+				<div class="upgrade-info">
+					<span class="upgrade-icon">🔮</span>
+					<div class="upgrade-details">
+						<span class="upgrade-name">Quantum Click</span>
+						<span class="upgrade-description">x25 par clic</span>
+					</div>
+				</div>
+				<div class="upgrade-cost">
+					<span class="cost-value">1000000</span>
+					<span class="cost-icon">🍄</span>
+				</div>
+			</button>
+
+			<button class="upgrade-btn" id="galactic-farm-btn">
+				<div class="upgrade-info">
+					<span class="upgrade-icon">🌌</span>
+					<div class="upgrade-details">
+						<span class="upgrade-name">Galactic Farm</span>
+						<span class="upgrade-description">+35K mushroom/sec</span>
+					</div>
+				</div>
+				<div class="upgrade-cost">
+					<span class="cost-value">5000000</span>
+					<span class="cost-icon">🍄</span>
+				</div>
+			</button>
+
+			<button class="upgrade-btn" id="cosmic-click-btn">
+				<div class="upgrade-info">
+					<span class="upgrade-icon">💫</span>
+					<div class="upgrade-details">
+						<span class="upgrade-name">Cosmic Click</span>
+						<span class="upgrade-description">x50 par clic</span>
+					</div>
+				</div>
+				<div class="upgrade-cost">
+					<span class="cost-value">10000000</span>
+					<span class="cost-icon">🍄</span>
+				</div>
+			</button>
+
+			<button class="upgrade-btn" id="universal-farm-btn">
+				<div class="upgrade-info">
+					<span class="upgrade-icon">🌟</span>
+					<div class="upgrade-details">
+						<span class="upgrade-name">Universal Farm</span>
+						<span class="upgrade-description">+250K mushroom/sec</span>
+					</div>
+				</div>
+				<div class="upgrade-cost">
+					<span class="cost-value">50000000</span>
+					<span class="cost-icon">🍄</span>
+				</div>
+			</button>
+
+			<button class="upgrade-btn" id="infinity-click-btn">
+				<div class="upgrade-info">
+					<span class="upgrade-icon">♾️</span>
+					<div class="upgrade-details">
+						<span class="upgrade-name">Infinity Click</span>
+						<span class="upgrade-description">x100 par clic</span>
+					</div>
+				</div>
+				<div class="upgrade-cost">
+					<span class="cost-value">100000000</span>
+					<span class="cost-icon">🍄</span>
+				</div>
+			</button>
+
+			<button class="upgrade-btn" id="divine-farm-btn">
+				<div class="upgrade-info">
+					<span class="upgrade-icon">👼</span>
+					<div class="upgrade-details">
+						<span class="upgrade-name">Divine Farm</span>
+						<span class="upgrade-description">+1.5M mushroom/sec</span>
+					</div>
+				</div>
+				<div class="upgrade-cost">
+					<span class="cost-value">500000000</span>
+					<span class="cost-icon">🍄</span>
+				</div>
+			</button>
+
+			<button class="upgrade-btn" id="ethereal-farm-btn">
+				<div class="upgrade-info">
+					<span class="upgrade-icon">🌠</span>
+					<div class="upgrade-details">
+						<span class="upgrade-name">Ethereal Farm</span>
+						<span class="upgrade-description">+10M mushroom/sec</span>
+					</div>
+				</div>
+				<div class="upgrade-cost">
+					<span class="cost-value">5000000000</span>
+					<span class="cost-icon">🍄</span>
+				</div>
+			</button>
+
+			<button class="upgrade-btn" id="cosmic-farm-btn">
+				<div class="upgrade-info">
+					<span class="upgrade-icon">🪐</span>
+					<div class="upgrade-details">
+						<span class="upgrade-name">Cosmic Farm</span>
+						<span class="upgrade-description">+75M mushroom/sec</span>
+					</div>
+				</div>
+				<div class="upgrade-cost">
+					<span class="cost-value">50000000000</span>
+					<span class="cost-icon">🍄</span>
+				</div>
+			</button>
+
+			<button class="upgrade-btn" id="infinite-farm-btn">
+				<div class="upgrade-info">
+					<span class="upgrade-icon">♾️</span>
+					<div class="upgrade-details">
+						<span class="upgrade-name">Infinite Farm</span>
+						<span class="upgrade-description">+500M mushroom/sec</span>
+					</div>
+				</div>
+				<div class="upgrade-cost">
+					<span class="cost-value">500000000000</span>
+					<span class="cost-icon">🍄</span>
+				</div>
+			</button>
+		</div>
+	</div>
+
+	<button class="reset-access-btn" id="reset-btn">
+		<span class="reset-icon">🔄</span>
+		<span class="reset-text">RESET</span>
+	</button>
+
+	<div class="stats-panel">
+		<h2 class="stats-title">STATS</h2>
+		<div class="stats-list">
+			<div class="stat-item">
+				<span class="stat-icon">🍄</span>
+				<div class="stat-details">
+					<span class="stat-label">Total Récolté</span>
+					<span class="stat-value" id="total-mushrooms">0</span>
+				</div>
+			</div>
+			<div class="stat-item">
+				<span class="stat-icon">🍄</span>
+				<div class="stat-details">
+					<span class="stat-label">Par Seconde</span>
+					<span class="stat-value" id="mushrooms-per-sec">0</span>
+				</div>
+			</div>
+			<div class="stat-item">
+				<span class="stat-icon">👆</span>
+				<div class="stat-details">
+					<span class="stat-label">Clics Totaux</span>
+					<span class="stat-value" id="total-clicks">0</span>
+				</div>
+			</div>
+			<div class="stat-item">
+				<span class="stat-icon">⏰</span>
+				<div class="stat-details">
+					<span class="stat-label">Temps de Jeu</span>
+					<span class="stat-value" id="play-time">0:00</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="grade-panel">
+		<div class="panel-container">
+			<div class="panel-flip" id="panel-flip">
+				<div class="panel-face panel-front">
+					<button class="panel-flip-btn" id="flip-to-leaderboard" title="Voir le classement">
+						<span class="flip-arrow">➤</span>
+					</button>
+					<div class="grade-content">
+						<div class="grade-header">
+							<div class="grade-label">🏅 VOTRE GRADE</div>
+						</div>
+						<div class="grade-icon" id="grade-icon">🍄</div>
+						<div class="grade-title" id="grade-title">Spore</div>
+						<div class="grade-stats-mini">
+							<div class="mini-stat">
+								<span class="mini-stat-label">Niveau</span>
+								<span class="mini-stat-value" id="grade-level">1</span>
+							</div>
+							<div class="mini-stat-divider"></div>
+							<div class="mini-stat">
+								<span class="mini-stat-label">Progression</span>
+								<span class="mini-stat-value" id="grade-percentage">0%</span>
+							</div>
+						</div>
+						<div class="grade-progress-container">
+							<div class="grade-progress-bar" id="grade-progress"></div>
+						</div>
+						<div class="grade-next" id="grade-next">Prochain: Pousse (50)</div>
+						<div class="grade-description" id="grade-description">
+							Vous débutez votre aventure champignonnesque ! Continuez à récolter pour progresser.
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-face panel-back">
+					<button class="panel-flip-btn" id="flip-to-grade" title="Voir votre grade">
+						<span class="flip-arrow">➤</span>
+					</button>
+					<div class="leaderboard-content">
+						<h3 class="leaderboard-title">🏆 TOP RANKED 🏆</h3>
+						<div class="leaderboard-list">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<button class="shop-access-btn" id="shop-btn">
+		<span class="shop-icon">🛒</span>
+		<span class="shop-text">SHOP</span>
+	</button>
+
+	<div class="cash-counter">
+		<span class="cash-icon">💵</span>
+		<span class="cash-value" id="cash-display">0</span>
+	</div>
+
+	<div id="falling-mushrooms"></div>
+	<div class="container">
+		<button class="mushroom-btn-3d">
+			<span class="mushroom-icon">🍄</span>
+			<span class="btn-text">CLICK ME</span>
+			<span class="mushroom-icon">🍄</span>
+		</button>
+		<div class="mushroom-counter">
+			<span class="counter-number">0</span>
+			<span class="counter-text">mushroom</span>
+		</div>
+	</div>
+	
+	<footer>
+		<P>&copy; 2025 "Mushroom Clicker" - Tous droits réservés</P>
+		<div class="link-credits">
+			<p>developé par Acholias</p>
+			<a href="https://github.com/Acholias/" target="blank" class="github-btn">Voir Github</a>
+		</div>
+	</footer>
+	<script src="script.js"></script>
+</body>
+</html>

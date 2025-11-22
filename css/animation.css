@@ -1,0 +1,252 @@
+@keyframes wiggle-horizontal
+{
+	0%, 100% {
+		transform: rotate(-10deg) scale(1);
+	}
+	25% {
+		transform: rotate(10deg) scale(1.1);
+	}
+	50% {
+		transform: rotate(-10deg) scale(1);
+	}
+	75% {
+		transform: rotate(5deg) scale(1.05);
+	}
+}
+
+.mushroom-icon
+{
+	animation: wiggle-horizontal 2s ease-in-out infinite;
+}
+
+/* Animation du marchand */
+@keyframes merchant-wave
+{
+	0%, 100% {
+		transform: translateX(-50%) rotate(-3deg);
+	}
+	50% {
+		transform: translateX(-50%) rotate(3deg);
+	}
+}
+
+.merchant-head
+{
+	animation: merchant-wave 2s ease-in-out infinite;
+}
+
+/* Animation des champignons qui tombent */
+@keyframes fall
+{
+	0% {
+		transform: translateY(-100vh) rotate(0deg);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(100vh) rotate(360deg);
+		opacity: 0.8;
+	}
+}
+
+.falling-mushroom
+{
+	animation: fall linear;
+}
+
+/* Animation du grade */
+@keyframes grade-pulse
+{
+	0%, 100% {
+		transform: scale(1) rotate(-5deg);
+	}
+	50% {
+		transform: scale(1.15) rotate(5deg);
+	}
+}
+
+.grade-icon
+{
+	animation: grade-pulse 2s ease-in-out infinite;
+}
+
+/* Animation des étincelles */
+@keyframes sparkle
+{
+	0%, 100% {
+		opacity: 0.3;
+		transform: scale(0.8) rotate(0deg);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1.2) rotate(180deg);
+	}
+}
+
+.grade-icon::before
+{
+	animation: sparkle 1.5s ease-in-out infinite;
+}
+
+/* Animation des feux d'artifice */
+@keyframes firework-explode
+{
+	0% {
+		transform: translate(0, 0) scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: translate(var(--vx), var(--vy)) scale(0);
+		opacity: 0;
+	}
+}
+
+/* Animations pour le champignon doré */
+@keyframes golden-pulse
+{
+	0%, 100% {
+		filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.8)) 
+		        drop-shadow(0 0 20px rgba(251, 191, 36, 0.6))
+		        drop-shadow(0 0 30px rgba(251, 191, 36, 0.4));
+	}
+	50% {
+		filter: drop-shadow(0 0 20px rgba(251, 191, 36, 1)) 
+		        drop-shadow(0 0 40px rgba(251, 191, 36, 0.8))
+		        drop-shadow(0 0 60px rgba(251, 191, 36, 0.6));
+	}
+}
+
+@keyframes boost-appear
+{
+	0% {
+		transform: translate(-50%, -50%) scale(0);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes boost-disappear
+{
+	0% {
+		transform: translate(-50%, -50%) scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(0.5);
+		opacity: 0;
+	}
+}
+
+@keyframes boost-glow
+{
+	0%, 100% {
+		box-shadow: 0 0 30px rgba(251, 191, 36, 0.8), 
+		            0 0 60px rgba(251, 191, 36, 0.6),
+		            0 10px 40px rgba(0, 0, 0, 0.5);
+	}
+	50% {
+		box-shadow: 0 0 50px rgba(251, 191, 36, 1), 
+		            0 0 100px rgba(251, 191, 36, 0.8),
+		            0 10px 40px rgba(0, 0, 0, 0.5);
+	}
+}
+
+@keyframes boost-spin
+{
+	0% {
+		transform: rotate(0deg) scale(1);
+	}
+	25% {
+		transform: rotate(90deg) scale(1.1);
+	}
+	50% {
+		transform: rotate(180deg) scale(1);
+	}
+	75% {
+		transform: rotate(270deg) scale(1.1);
+	}
+	100% {
+		transform: rotate(360deg) scale(1);
+	}
+}
+
+/* Animations pour le champignon bleu */
+@keyframes blue-pulse
+{
+	0%, 100% {
+		filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.8)) 
+		        drop-shadow(0 0 20px rgba(59, 130, 246, 0.6))
+		        drop-shadow(0 0 30px rgba(59, 130, 246, 0.4));
+	}
+	50% {
+		filter: drop-shadow(0 0 20px rgba(59, 130, 246, 1)) 
+		        drop-shadow(0 0 40px rgba(59, 130, 246, 0.8))
+		        drop-shadow(0 0 60px rgba(59, 130, 246, 0.6));
+	}
+}
+
+@keyframes blue-glow
+{
+	0%, 100% {
+		box-shadow: 0 0 30px rgba(59, 130, 246, 0.8), 
+		            0 0 60px rgba(59, 130, 246, 0.6),
+		            0 10px 40px rgba(0, 0, 0, 0.5);
+	}
+	50% {
+		box-shadow: 0 0 50px rgba(59, 130, 246, 1), 
+		            0 0 100px rgba(59, 130, 246, 0.8),
+		            0 10px 40px rgba(0, 0, 0, 0.5);
+	}
+}
+
+/* Animations pour le cash */
+@keyframes cash-pulse
+{
+	0%, 100% {
+		filter: drop-shadow(0 0 10px rgba(34, 197, 94, 0.8)) 
+		        drop-shadow(0 0 20px rgba(34, 197, 94, 0.6))
+		        drop-shadow(0 0 30px rgba(34, 197, 94, 0.4));
+	}
+	50% {
+		filter: drop-shadow(0 0 20px rgba(34, 197, 94, 1)) 
+		        drop-shadow(0 0 40px rgba(34, 197, 94, 0.8))
+		        drop-shadow(0 0 60px rgba(34, 197, 94, 0.6));
+	}
+}
+
+@keyframes fadeIn
+{
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes pointer-bounce
+{
+	0%, 100% {
+		transform: translateX(-50%) translateY(0);
+	}
+	50% {
+		transform: translateX(-50%) translateY(5px);
+	}
+}
+
+@keyframes error-shake
+{
+	0%, 100% {
+		transform: translateX(0);
+	}
+	10%, 30%, 50%, 70%, 90% {
+		transform: translateX(-10px);
+	}
+	20%, 40%, 60%, 80% {
+		transform: translateX(10px);
+	}
+}

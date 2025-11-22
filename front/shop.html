@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Mushroom Clicker - Shop</title>
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍄</text></svg>">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/shop.css">
+	<link rel="stylesheet" href="../css/animation.css">
+</head>
+
+<body>
+	<div class="shop-container">
+		<button class="back-btn" id="back-to-game">
+			<span class="back-icon">⬅️</span>
+			<span class="back-text">Retour au Jeu</span>
+		</button>
+
+		<div class="shop-cash-display">
+			<span class="shop-cash-icon">💵</span>
+			<span class="shop-cash-value" id="shop-cash-display">0</span>
+		</div>
+
+		<div class="shop-tabs">
+			<button class="tab-btn active" data-tab="fortune">
+				<span class="tab-icon">🎰</span>
+				<span class="tab-name">Roue de la Fortune</span>
+			</button>
+			<button class="tab-btn" data-tab="cosmetics">
+				<span class="tab-icon">✨</span>
+				<span class="tab-name">Cosmétiques</span>
+			</button>
+		</div>
+
+		<div class="shop-content">
+			<!-- Onglet Roue de la Fortune -->
+			<div class="tab-content active" id="fortune-tab">
+				<div class="fortune-section">
+					<h2 class="section-title"> Roue de la Fortune </h2>
+					<p class="section-description">Tentez votre chance pour gagner des récompenses incroyables !</p>
+					
+				<div class="fortune-wheel-container">
+					<div class="wheel-wrapper">
+						<div class="wheel-pointer">▼</div>
+						<div class="fortune-wheel" id="fortune-wheel">
+							<div class="wheel-segment" style="--rotation: 0deg;"></div>
+							<div class="wheel-segment" style="--rotation: 45deg;"></div>
+							<div class="wheel-segment" style="--rotation: 90deg;"></div>
+							<div class="wheel-segment" style="--rotation: 135deg;"></div>
+							<div class="wheel-segment" style="--rotation: 180deg;"></div>
+							<div class="wheel-segment" style="--rotation: 225deg;"></div>
+							<div class="wheel-segment" style="--rotation: 270deg;"></div>
+							<div class="wheel-segment" style="--rotation: 315deg;"></div>
+							<div class="wheel-center">🎰</div>
+						</div>
+					</div>
+				</div>			<button class="spin-btn" id="spin-wheel">
+				<span class="btn-text">TOURNER LA ROUE</span>
+				<span class="btn-cost">50 💵</span>
+			</button>
+		</div>
+	</div>			<!-- Onglet Cosmétiques -->
+			<div class="tab-content" id="cosmetics-tab">
+				<div class="cosmetics-section">
+					<h2 class="section-title">✨ Boutique Cosmétique ✨</h2>
+					<p class="section-description">Personnalisez votre expérience de jeu !</p>
+					
+					<div class="cosmetics-grid">
+						<div class="cosmetic-item">
+							<div class="cosmetic-preview">🍄</div>
+							<div class="cosmetic-info">
+								<h3 class="cosmetic-name">Champignon Classique</h3>
+								<p class="cosmetic-desc">Le champignon original</p>
+							</div>
+					<button class="cosmetic-btn equipped">Équipé</button>
+				</div>
+
+				<div class="cosmetic-item locked">
+					<div class="cosmetic-preview">🍏</div>
+					<div class="cosmetic-info">
+						<h3 class="cosmetic-name">Pomme Verte</h3>
+						<p class="cosmetic-desc">Thème nature</p>
+					</div>
+					<button class="cosmetic-btn" data-emoji="🍏" data-price="25">
+						<span class="price">25 💵</span>
+					</button>
+				</div>
+
+				<div class="cosmetic-item locked">
+						<div class="cosmetic-preview">🍎</div>
+						<div class="cosmetic-info">
+							<h3 class="cosmetic-name">Pomme Rouge</h3>
+							<p class="cosmetic-desc">Thème feu</p>
+						</div>
+						<button class="cosmetic-btn" data-emoji="🍎" data-price="50">
+						<span class="price">50 💵</span>
+					</button>
+				</div>
+
+				<div class="cosmetic-item locked">
+						<div class="cosmetic-preview">🌈</div>
+						<div class="cosmetic-info">
+							<h3 class="cosmetic-name">Arc-en-ciel</h3>
+							<p class="cosmetic-desc">Édition spéciale</p>
+						</div>
+						<button class="cosmetic-btn" data-emoji="🌈" data-price="100">
+						<span class="price">100 💵</span>
+					</button>
+				</div>
+
+				<div class="cosmetic-item locked">
+						<div class="cosmetic-preview">💎</div>
+						<div class="cosmetic-info">
+							<h3 class="cosmetic-name">Diamant</h3>
+							<p class="cosmetic-desc">Ultra rare</p>
+						</div>
+					<button class="cosmetic-btn" data-emoji="💎" data-price="250">
+						<span class="price">250 💵</span>
+					</button>
+				</div>
+
+				<div class="cosmetic-item locked">
+					<div class="cosmetic-preview">👑</div>
+					<div class="cosmetic-info">
+						<h3 class="cosmetic-name">Couronne Royale</h3>
+						<p class="cosmetic-desc">Pour les rois</p>
+					</div>
+					<button class="cosmetic-btn" data-emoji="👑" data-price="500">
+						<span class="price">500 💵</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	<footer>
+		<P>&copy; 2025 "Mushroom Clicker" - Tous droits réservés</P>
+		<div class="link-credits">
+			<p>developé par Acholias</p>
+			<a href="https://github.com/Acholias/" target="blank" class="github-btn">Voir Github</a>
+		</div>
+	</footer>
+
+	<script src="shop.js"></script>
+</body>
+</html>
