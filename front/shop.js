@@ -6,46 +6,46 @@ let equippedCosmetic = localStorage.getItem('mushroomCosmetic') || '🍄';
 let ownedCosmetics = JSON.parse(localStorage.getItem('mushroomOwnedCosmetics') || '["🍄"]');
 
 const wheelRewards = {
-	facile: [
-		{ type: 'bonus', icon: '💰', name: 'Cash x2', multiplier: 2 },
-		{ type: 'bonus', icon: '🍄', name: '+500 Champignons', mushrooms: 500 },
-		{ type: 'bonus', icon: '💎', name: '+100 Cash', cash: 100 },
-		{ type: 'bonus', icon: '⚡', name: '+1000 Champignons', mushrooms: 1000 },
-		{ type: 'bonus', icon: '🎁', name: '+50 Cash', cash: 50 },
-		{ type: 'bonus', icon: '🌟', name: '+2000 Champignons', mushrooms: 2000 },
-		{ type: 'bonus', icon: '💵', name: '+200 Cash', cash: 200 },
-		{ type: 'bonus', icon: '🎰', name: 'JACKPOT +500 Cash', cash: 500 }
-	],
-	difficile: [
-		{ type: 'bonus', icon: '💰', name: 'Cash x2', multiplier: 2 },
-		{ type: 'bonus', icon: '🍄', name: '+500 Champignons', mushrooms: 500 },
-		{ type: 'bonus', icon: '💎', name: '+100 Cash', cash: 100 },
-		{ type: 'bonus', icon: '⚡', name: '+800 Champignons', mushrooms: 800 },
-		{ type: 'bonus', icon: '🎁', name: '+50 Cash', cash: 50 },
-		{ type: 'bonus', icon: '🌟', name: '+1500 Champignons', mushrooms: 1500 },
-		{ type: 'malus', icon: '😢', name: '-100 Champignons', mushrooms: -100 },
-		{ type: 'malus', icon: '💸', name: '-20 Cash', cash: -20 }
-	],
-	extreme: [
-		{ type: 'bonus', icon: '💰', name: 'Cash x2', multiplier: 2 },
-		{ type: 'bonus', icon: '🍄', name: '+500 Champignons', mushrooms: 500 },
-		{ type: 'bonus', icon: '💎', name: '+100 Cash', cash: 100 },
-		{ type: 'bonus', icon: '🎁', name: '+50 Cash', cash: 50 },
-		{ type: 'malus', icon: '❌', name: '-50% Champignons', mushrooms: -0.5 },
-		{ type: 'malus', icon: '💸', name: '-30 Cash', cash: -30 },
-		{ type: 'malus', icon: '😢', name: '-200 Champignons', mushrooms: -200 },
-		{ type: 'malus', icon: '🔻', name: '-50% Cash', multiplier: 0.5 }
-	],
-	cauchemar: [
-		{ type: 'bonus', icon: '🎰', name: 'JACKPOT +500 Cash', cash: 500 },
-		{ type: 'malus', icon: '❌', name: '-50% Champignons', mushrooms: -0.5 },
-		{ type: 'malus', icon: '💸', name: '-50 Cash', cash: -50 },
-		{ type: 'malus', icon: '😢', name: '-500 Champignons', mushrooms: -500 },
-		{ type: 'malus', icon: '🔻', name: '-70% Cash', multiplier: 0.3 },
-		{ type: 'malus', icon: '💀', name: '-1000 Champignons', mushrooms: -1000 },
-		{ type: 'malus', icon: '⚠️', name: '-80 Cash', cash: -80 },
-		{ type: 'malus', icon: '🌩️', name: '-90% Champignons', mushrooms: -0.9 }
-	]
+  facile: [
+    { icon: "💰", label: "Cash +50",    type: "bonus",   action: { cash: 50 } },
+    { icon: "🍄", label: "+10% Champignons", type: "bonus",   action: { mushroomsPercent: 10 } },
+    { icon: "💎", label: "Cash +35",    type: "bonus",   action: { cash: 35 } },
+    { icon: "⚡", label: "+25% Champignons", type: "bonus",   action: { mushroomsPercent: 25 } },
+    { icon: "🎁", label: "Cash +25",    type: "bonus",   action: { cash: 25 } },
+    { icon: "🌟", label: "+15% Champignons", type: "bonus",   action: { mushroomsPercent: 15 } },
+    { icon: "💵", label: "Cash +75",    type: "bonus",   action: { cash: 75 } },
+    { icon: "🎰", label: "Cash +120",   type: "bonus",   action: { cash: 120 } }
+  ],
+  difficile: [
+    { icon: "💰", label: "Cash x2",     type: "bonus",   action: { cashMultiplier: 2 } },
+    { icon: "🍄", label: "+20% Champignons", type: "bonus",   action: { mushroomsPercent: 20 } },
+    { icon: "💎", label: "Cash +90",    type: "bonus",   action: { cash: 90 } },
+    { icon: "⚡", label: "+40% Champignons", type: "bonus",   action: { mushroomsPercent: 40 } },
+    { icon: "🎁", label: "Cash +60",    type: "bonus",   action: { cash: 60 } },
+    { icon: "🌟", label: "+30% Champignons", type: "bonus",   action: { mushroomsPercent: 30 } },
+    { icon: "😢", label: "-15% Champignons", type: "malus",   action: { mushroomsPercent: -15 } },
+    { icon: "💸", label: "Cash -40",    type: "malus",   action: { cash: -40 } }
+  ],
+  extreme: [
+    { icon: "💰", label: "Cash x2.5",   type: "bonus",   action: { cashMultiplier: 2.5 } },
+    { icon: "🍄", label: "+50% Champignons", type: "bonus",   action: { mushroomsPercent: 50 } },
+    { icon: "💎", label: "Cash +200",   type: "bonus",   action: { cash: 200 } },
+    { icon: "🎁", label: "Cash +150",   type: "bonus",   action: { cash: 150 } },
+    { icon: "❌", label: "-40% Champignons", type: "malus",   action: { mushroomsPercent: -40 } },
+    { icon: "💸", label: "Cash -80",    type: "malus",   action: { cash: -80 } },
+    { icon: "😢", label: "-30% Champignons", type: "malus",   action: { mushroomsPercent: -30 } },
+    { icon: "🔻", label: "-35% Cash",   type: "malus",   action: { cashPercent: -35 } }
+  ],
+  cauchemar: [
+    { icon: "🎰", label: "Champignons +100% et Cash x3", type: "bonus", action: { mushroomsPercent: 100, cashMultiplier: 3 } },
+    { icon: "❌", label: "-50% Champignons", type: "malus",   action: { mushroomsPercent: -50 } },
+    { icon: "💸", label: "Cash -150",   type: "malus",   action: { cash: -150 } },
+    { icon: "😢", label: "-60% Champignons", type: "malus",   action: { mushroomsPercent: -60 } },
+    { icon: "🔻", label: "-60% Cash",   type: "malus",   action: { cashPercent: -60 } },
+    { icon: "💀", label: "-70% Champignons", type: "malus",   action: { mushroomsPercent: -70 } },
+    { icon: "⚠️", label: "Cash -200",   type: "malus",   action: { cash: -200 } },
+    { icon: "🌩️", label: "-80% Champignons", type: "malus",   action: { mushroomsPercent: -80 } }
+  ]
 };
 
 function updateCashDisplay()
@@ -109,36 +109,27 @@ function updateLegend() {
 	rewards.forEach(reward => {
 		const legendItem = document.createElement('div');
 		legendItem.className = `legend-item ${reward.type}`;
-		
+
 		let description = '';
-		if (reward.multiplier !== undefined) {
-			if (reward.multiplier > 1) {
-				description = `Cash x${reward.multiplier}`;
-			} else if (reward.multiplier < 1) {
-				const percent = Math.round((1 - reward.multiplier) * 100);
-				description = `-${percent}% Cash`;
-			}
-		} else if (reward.cash !== undefined) {
-			description = reward.cash > 0 ? `+${reward.cash} 💵` : `${reward.cash} 💵`;
-		} else if (reward.mushrooms !== undefined) {
-			if (reward.mushrooms > 0) {
-				description = `+${reward.mushrooms} 🍄`;
-			} else if (reward.mushrooms < 0 && reward.mushrooms > -1) {
-				const percent = Math.round(reward.mushrooms * 100);
-				description = `${percent}% 🍄`;
-			} else {
-				description = `${reward.mushrooms} 🍄`;
-			}
+		const a = reward.action || {};
+		if (a.cashMultiplier !== undefined) {
+			description = `Cash x${a.cashMultiplier}`;
+		} else if (a.cashPercent !== undefined) {
+			description = (a.cashPercent > 0 ? `+${a.cashPercent}% 💵` : `${a.cashPercent}% 💵`);
+		} else if (a.cash !== undefined) {
+			description = a.cash > 0 ? `+${a.cash} 💵` : `${a.cash} 💵`;
+		} else if (a.mushroomsPercent !== undefined) {
+			description = (a.mushroomsPercent > 0 ? `+${a.mushroomsPercent}% 🍄` : `${a.mushroomsPercent}% 🍄`);
 		}
-		
+
 		legendItem.innerHTML = `
 			<span class="legend-icon">${reward.icon}</span>
 			<div class="legend-text">
-				<p class="legend-name">${reward.name}</p>
+				<p class="legend-name">${reward.label}</p>
 				<p class="legend-desc">${description}</p>
 			</div>
 		`;
-		
+
 		legendContainer.appendChild(legendItem);
 	});
 }
@@ -230,46 +221,41 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Fonction pour appliquer la récompense
 	function applyReward(reward) {
 		let message = '';
-		
-		if (reward.multiplier !== undefined) {
-			if (reward.multiplier >= 1) {
-				// Bonus multiplicateur
-				cash = Math.floor(cash * reward.multiplier);
-				message = `${reward.icon} ${reward.name}\nVous avez maintenant ${cash} 💵`;
-			} else {
-				// Malus multiplicateur
-				cash = Math.floor(cash * reward.multiplier);
-				message = `${reward.icon} ${reward.name}\nIl vous reste ${cash} 💵`;
-			}
-		} else if (reward.cash !== undefined) {
-			if (reward.cash > 0) {
-				cash += reward.cash;
-				message = `${reward.icon} ${reward.name}\nVous avez maintenant ${cash} 💵`;
-			} else {
-				cash += reward.cash;
-				if (cash < 0) cash = 0;
-				message = `${reward.icon} ${reward.name}\nIl vous reste ${cash} 💵`;
-			}
-		} else if (reward.mushrooms !== undefined) {
-			if (reward.mushrooms > 0) {
-				mushrooms += reward.mushrooms;
-				message = `${reward.icon} ${reward.name}\nVous avez maintenant ${Math.floor(mushrooms)} 🍄`;
-			} else if (reward.mushrooms < 0 && reward.mushrooms > -1) {
-				// Malus en pourcentage
-				mushrooms = Math.floor(mushrooms * (1 + reward.mushrooms));
-				message = `${reward.icon} ${reward.name}\nIl vous reste ${Math.floor(mushrooms)} 🍄`;
-			} else {
-				mushrooms += reward.mushrooms;
-				if (mushrooms < 0) mushrooms = 0;
-				message = `${reward.icon} ${reward.name}\nIl vous reste ${Math.floor(mushrooms)} 🍄`;
-			}
+		const a = reward.action || {};
+		let beforeCash = cash;
+		let beforeMushrooms = mushrooms;
+
+		// Cash multiplier
+		if (a.cashMultiplier !== undefined) {
+			cash = Math.floor(cash * a.cashMultiplier);
+			message += `${reward.icon} ${reward.label}\nIl vous reste ${cash} 💵`;
 		}
-		
+		// Cash percent
+		else if (a.cashPercent !== undefined) {
+			let delta = Math.floor(cash * (a.cashPercent / 100));
+			cash += delta;
+			if (cash < 0) cash = 0;
+			message += `${reward.icon} ${reward.label}\nIl vous reste ${cash} 💵`;
+		}
+		// Cash flat
+		else if (a.cash !== undefined) {
+			cash += a.cash;
+			if (cash < 0) cash = 0;
+			message += `${reward.icon} ${reward.label}\nIl vous reste ${cash} 💵`;
+		}
+
+		// Mushrooms percent
+		else if (a.mushroomsPercent !== undefined) {
+			let delta = Math.floor(mushrooms * (a.mushroomsPercent / 100));
+			mushrooms += delta;
+			if (mushrooms < 0) mushrooms = 0;
+			message += `${reward.icon} ${reward.label}\nIl vous reste ${mushrooms} 🍄`;
+		}
+
 		// Sauvegarder les changements
 		localStorage.setItem('mushroomCash', cash);
 		localStorage.setItem('mushroomCount', mushrooms);
 		updateCashDisplay();
-		
 		return message;
 	}
 
