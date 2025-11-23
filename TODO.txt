@@ -1,27 +1,27 @@
-1 - Faire plusieurs niveau pour le jeux (faire varier les prix et l'apparitions de bonus)
+- Faire plusieurs niveau pour le jeux (faire varier les prix et l'apparitions de bonus)
 
-2 - Faire en sorte de pouvoir sélectionné ou non les bonus (gold-mushroom/blue-mushroom) boost clicker/braderie des prix des upgrades 
+- Faire en sorte de pouvoir sélectionné ou non les bonus (go-mushroom/bl-mushroom) boost clicker/braderie des prix des upgrades 
 
-4 - Ecran d'accueil pour choisir le nom de joueur ainsi que la difficulté et les bonus *
+- Ecran d'accueil pour choisir le nom de joueur ainsi que la difficulté et les bonus *
 
-6 - Faire un bouton de shop pour acheter des choses (cosmétiques) par la suite avec des couronnes (tomberont du ciel)
+- Faire un bouton de shop pour acheter des choses (cosmétiques) par la suite avec des couronnes (tomberont du ciel)
 
-8 - Faire aussi une roue de la fortune pour avoir accès à des bonus ou des malus (monnaie: couronnes du ciel)
-
+- Faire aussi une roue de la fortune pour avoir accès à des bonus ou des malus (monnaie: couronnes du ciel)
 
 
 
 ########################################################################################################################################################################################
 
-3 - Faire d'autres niveaux jusqu'au niveau 20 avec une fin une fois le level 20 compléter (page de fin + bouton pour RESET)
+- Faire d'autres niveaux jusqu'au niveau 20 avec une fin une fois le level 20 compléter (page de fin + bouton pour RESET)
 
-5 - Faire un mage qui à partir d'un certains level (ex: level 15) achète pour nous les upgrades (que dans certaines difficulté)
+- Faire un mage qui à partir d'un certains level (ex: level 15) achète pour nous les upgrades (que dans certaines difficulté)
 
-7 - Faire un genre de profil ducoup pour sélectionner les cosmétiques (skin pour nom de joueur, titre avec le grade, couleur de nom, bonus limités dans le temps(x2, x3))
+- Faire un genre de profil ducoup pour sélectionner les cosmétiques (skin pour nom de joueur, titre avec le grade, couleur de nom, bonus limités dans le temps(x2, x3))
 
-9 - Essayer de faire un classements plus réaliste surtout au niveau des scores
+- Essayer de faire un classements plus réaliste surtout au niveau des scores
 
+- Faire des cartes pour acheter des multiplicateur à partir de certains niveaux pour rendre la progression plus fun et pas super longue
 
 **
-10 - Peut être rajouter plus tard un mode compétitif pour faire en sorte de "speedrun" le dernier grade et avec un leaderboard avec les meilleurs temps référencer dessus
+1- Peut être rajouter plus tard un mode compétitif pour faire en sorte de "speedrun" le dernier grade et avec un leaderboard avec les meilleurs temps référencer dessus
 **
