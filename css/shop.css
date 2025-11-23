@@ -11,7 +11,6 @@ body
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding-bottom: 100px;
 }
 
 .back-btn
@@ -136,9 +135,9 @@ body
 .shop-content
 {
 	width: 100%;
-	max-width: 1400px;
+	max-width: 1200px;
 	background: linear-gradient(135deg, #fff9e6 0%, #ffe4b5 100%);
-	padding: 28px;
+	padding: 20px;
 	border-radius: 18px;
 	border: 4px solid #d4a574;
 	box-shadow: 0 7px 0 #b8935f, 0 9px 18px rgba(0, 0, 0, 0.4);
@@ -182,10 +181,112 @@ body
 	align-items: center;
 }
 
+.fortune-content-wrapper
+{
+	display: flex;
+	gap: 30px;
+	align-items: flex-start;
+	justify-content: center;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
 .fortune-wheel-container
 {
-	margin-bottom: 30px;
 	padding: 20px;
+	margin-top: 40px;
+}
+
+.fortune-legend
+{
+	background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+	padding: 16px;
+	border-radius: 15px;
+	border: 4px solid #d4a574;
+	box-shadow: 0 6px 0 #b8935f, 0 8px 15px rgba(0, 0, 0, 0.3);
+	min-width: 240px;
+	max-width: 260px;
+}
+
+.legend-title
+{
+	font-family: 'Comic Sans MS', cursive, sans-serif;
+	font-size: 18px;
+	color: #e74c3c;
+	text-align: center;
+	margin: 0 0 12px 0;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.legend-items
+{
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.legend-item
+{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 8px 10px;
+	background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+	border-radius: 10px;
+	border: 2px solid #d4a574;
+	box-shadow: 0 3px 0 #b8935f, 0 4px 8px rgba(0, 0, 0, 0.15);
+	transition: transform 0.2s ease;
+}
+
+.legend-item:hover
+{
+	transform: translateX(3px);
+}
+
+.legend-item.bonus
+{
+	border-color: #27ae60;
+	background: linear-gradient(135deg, #e8f8f0 0%, #d4edda 100%);
+}
+
+.legend-item.malus
+{
+	border-color: #e74c3c;
+	background: linear-gradient(135deg, #f8e8e8 0%, #f5d0d0 100%);
+}
+
+.legend-icon
+{
+	font-size: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 30px;
+}
+
+.legend-text
+{
+	display: flex;
+	flex-direction: column;
+	gap: 1px;
+	flex: 1;
+}
+
+.legend-name
+{
+	font-family: 'Comic Sans MS', cursive, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #2c3e50;
+	margin: 0;
+}
+
+.legend-desc
+{
+	font-family: 'Comic Sans MS', cursive, sans-serif;
+	font-size: 10px;
+	color: #7f6a4e;
+	margin: 0;
 }
 
 .wheel-wrapper
@@ -241,6 +342,34 @@ body
 .wheel-segment:nth-child(even)
 {
 	background: linear-gradient(to right, #ff0000 0%, #ff0000 50%, #ff0000 100%);
+}
+
+.wheel-icons-overlay
+{
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	pointer-events: none;
+}
+
+.segment-icon-overlay
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 50px;
+	height: 50px;
+	font-size: 30px;
+	font-weight: bold;
+	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9), 0 0 10px rgba(255, 255, 255, 0.5);
+	pointer-events: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: translate(-50%, -50%) rotate(calc(var(--rotation) + 22.5deg)) translateY(-120px) rotate(calc(-1 * (var(--rotation) + 22.5deg)));
 }
 
 .wheel-center
@@ -566,17 +695,156 @@ body
 	text-align: center;
 }
 
-footer
+/* Pop-up de récompenses */
+.reward-popup
 {
-    text-align: center;
-    font-size: 11px;
-    color:  #434242;
-    padding: 20px 0;
-    position: absolute;
-    bottom: 0;
-} 
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 3000;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
 
-.link-credits
+.reward-popup.show
 {
-    font-size: 11px;
+	display: flex;
+	animation: fadeIn 0.3s ease-in;
+}
+
+.reward-popup-overlay
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	backdrop-filter: blur(5px);
+}
+
+.reward-popup-content
+{
+	position: relative;
+	background: linear-gradient(135deg, #fff9e6 0%, #ffe4b5 100%);
+	padding: 40px 50px;
+	border-radius: 25px;
+	border: 5px solid #d4a574;
+	box-shadow: 0 10px 0 #b8935f, 0 15px 40px rgba(0, 0, 0, 0.6);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	min-width: 400px;
+	animation: reward-popup-appear 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+	z-index: 3001;
+}
+
+.reward-popup-content.bonus
+{
+	background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+	border-color: #66bb6a;
+	box-shadow: 0 10px 0 #4caf50, 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.reward-popup-content.malus
+{
+	background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+	border-color: #e57373;
+	box-shadow: 0 10px 0 #ef5350, 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.reward-popup-icon
+{
+	font-size: 80px;
+	animation: reward-icon-bounce 0.8s ease-in-out infinite;
+	filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+}
+
+.reward-popup-title
+{
+	font-family: 'Comic Sans MS', cursive, sans-serif;
+	font-size: 32px;
+	font-weight: bold;
+	color: #2c3e50;
+	margin: 0;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reward-popup-content.bonus .reward-popup-title
+{
+	color: #2e7d32;
+}
+
+.reward-popup-content.malus .reward-popup-title
+{
+	color: #c62828;
+}
+
+.reward-popup-message
+{
+	font-family: 'Comic Sans MS', cursive, sans-serif;
+	font-size: 20px;
+	color: #5d4e37;
+	text-align: center;
+	margin: 0;
+	line-height: 1.5;
+	white-space: pre-line;
+}
+
+.reward-popup-btn
+{
+	font-family: 'Comic Sans MS', cursive, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+	background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+	border: 4px solid #2c3e50;
+	border-radius: 15px;
+	padding: 12px 40px;
+	cursor: pointer;
+	box-shadow: 0 5px 0 #1a5276, 0 6px 15px rgba(0, 0, 0, 0.3);
+	transition: all 0.2s ease;
+	margin-top: 10px;
+}
+
+.reward-popup-btn:hover
+{
+	transform: translateY(-3px);
+	box-shadow: 0 8px 0 #1a5276, 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.reward-popup-btn:active
+{
+	transform: translateY(2px);
+	box-shadow: 0 2px 0 #1a5276, 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes reward-popup-appear
+{
+	0%
+	{
+		transform: scale(0.5) rotate(-10deg);
+		opacity: 0;
+	}
+	100%
+	{
+		transform: scale(1) rotate(0deg);
+		opacity: 1;
+	}
+}
+
+@keyframes reward-icon-bounce
+{
+	0%, 100%
+	{
+		transform: translateY(0) scale(1);
+	}
+	50%
+	{
+		transform: translateY(-10px) scale(1.05);
+	}
 }

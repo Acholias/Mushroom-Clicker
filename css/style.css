@@ -65,21 +65,6 @@ body
     letter-spacing: 1px;
 }
 
-footer
-{
-    text-align: center;
-    font-size: 11px;
-    color:  #434242;
-    padding: 20px 0;
-    position: absolute;
-    bottom: 0;
-} 
-
-.link-credits
-{
-    font-size: 11px;
-}
-
 .github-btn
 {
     display: inline-block;
@@ -416,12 +401,6 @@ footer
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-@keyframes spin-slow
-{
-	from { transform: rotate(0deg); }
-	to { transform: rotate(360deg); }
-}
-
 .reset-confirmation-popup
 {
 	position: fixed;
@@ -468,29 +447,11 @@ footer
 	animation: popup-appear 0.3s ease-out;
 }
 
-@keyframes popup-appear
-{
-	from {
-		transform: translate(-50%, -50%) scale(0.7);
-		opacity: 0;
-	}
-	to {
-		transform: translate(-50%, -50%) scale(1);
-		opacity: 1;
-	}
-}
-
 .reset-warning-icon
 {
 	font-size: 80px;
 	filter: drop-shadow(0 4px 12px rgba(217, 119, 6, 0.8));
 	animation: pulse-warning 1.5s ease-in-out infinite;
-}
-
-@keyframes pulse-warning
-{
-	0%, 100% { transform: scale(1); }
-	50% { transform: scale(1.1); }
 }
 
 .reset-title
@@ -866,18 +827,6 @@ footer
 	animation: float-up-fade 1.5s ease-out forwards;
 	z-index: 10001;
 	transform: translate(-50%, -50%);
-}
-
-@keyframes float-up-fade
-{
-	0% {
-		opacity: 1;
-		transform: translate(-50%, -50%) scale(1);
-	}
-	100% {
-		opacity: 0;
-		transform: translate(-50%, -150%) scale(1.5);
-	}
 }
 
 #blue-boost-indicator

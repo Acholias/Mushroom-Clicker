@@ -37,30 +37,53 @@
 			<!-- Onglet Roue de la Fortune -->
 			<div class="tab-content active" id="fortune-tab">
 				<div class="fortune-section">
-					<h2 class="section-title"> Roue de la Fortune </h2>
+					<h2 class="section-title">🎰 Roue de la Fortune 🎰</h2>
 					<p class="section-description">Tentez votre chance pour gagner des récompenses incroyables !</p>
 					
-				<div class="fortune-wheel-container">
-					<div class="wheel-wrapper">
-						<div class="wheel-pointer">▼</div>
-						<div class="fortune-wheel" id="fortune-wheel">
-							<div class="wheel-segment" style="--rotation: 0deg;"></div>
-							<div class="wheel-segment" style="--rotation: 45deg;"></div>
-							<div class="wheel-segment" style="--rotation: 90deg;"></div>
-							<div class="wheel-segment" style="--rotation: 135deg;"></div>
-							<div class="wheel-segment" style="--rotation: 180deg;"></div>
-							<div class="wheel-segment" style="--rotation: 225deg;"></div>
-							<div class="wheel-segment" style="--rotation: 270deg;"></div>
-							<div class="wheel-segment" style="--rotation: 315deg;"></div>
-							<div class="wheel-center">🎰</div>
+					<div class="fortune-content-wrapper">
+						<div class="fortune-wheel-container">
+							<div class="wheel-wrapper">
+								<div class="wheel-pointer">▼</div>
+								<div class="fortune-wheel" id="fortune-wheel">
+									<div class="wheel-segment" style="--rotation: 0deg;"></div>
+									<div class="wheel-segment" style="--rotation: 45deg;"></div>
+									<div class="wheel-segment" style="--rotation: 90deg;"></div>
+									<div class="wheel-segment" style="--rotation: 135deg;"></div>
+									<div class="wheel-segment" style="--rotation: 180deg;"></div>
+									<div class="wheel-segment" style="--rotation: 225deg;"></div>
+									<div class="wheel-segment" style="--rotation: 270deg;"></div>
+									<div class="wheel-segment" style="--rotation: 315deg;"></div>
+									<div class="wheel-center">🎰</div>
+								</div>
+								<div class="wheel-icons-overlay" id="wheel-icons-overlay">
+									<span class="segment-icon-overlay" data-index="0" style="--rotation: 0deg;"></span>
+									<span class="segment-icon-overlay" data-index="1" style="--rotation: 45deg;"></span>
+									<span class="segment-icon-overlay" data-index="2" style="--rotation: 90deg;"></span>
+									<span class="segment-icon-overlay" data-index="3" style="--rotation: 135deg;"></span>
+									<span class="segment-icon-overlay" data-index="4" style="--rotation: 180deg;"></span>
+									<span class="segment-icon-overlay" data-index="5" style="--rotation: 225deg;"></span>
+									<span class="segment-icon-overlay" data-index="6" style="--rotation: 270deg;"></span>
+									<span class="segment-icon-overlay" data-index="7" style="--rotation: 315deg;"></span>
+								</div>
+							</div>
+						</div>
+
+						<div class="fortune-legend">
+							<h3 class="legend-title">🎁 Récompenses</h3>
+							<div class="legend-items" id="legend-items">
+								<!-- Les récompenses seront ajoutées dynamiquement -->
+							</div>
 						</div>
 					</div>
-				</div>			<button class="spin-btn" id="spin-wheel">
-				<span class="btn-text">TOURNER LA ROUE</span>
-				<span class="btn-cost">50 💵</span>
-			</button>
-		</div>
-	</div>			<!-- Onglet Cosmétiques -->
+
+					<button class="spin-btn" id="spin-wheel">
+						<span class="btn-text">TOURNER LA ROUE</span>
+						<span class="btn-cost">50 💵</span>
+					</button>
+				</div>
+			</div>
+			
+						<!-- Onglet Cosmétiques -->
 			<div class="tab-content" id="cosmetics-tab">
 				<div class="cosmetics-section">
 					<h2 class="section-title">✨ Boutique Cosmétique ✨</h2>
@@ -133,14 +156,20 @@
 			</div>
 		</div>
 	</div>
-</div>	<footer>
-		<P>&copy; 2025 "Mushroom Clicker" - Tous droits réservés</P>
-		<div class="link-credits">
-			<p>developé par Acholias</p>
-			<a href="https://github.com/Acholias/" target="blank" class="github-btn">Voir Github</a>
+</div>
+
+	<!-- Pop-up pour les récompenses -->
+	<div class="reward-popup" id="reward-popup">
+		<div class="reward-popup-overlay"></div>
+		<div class="reward-popup-content">
+			<div class="reward-popup-icon" id="reward-popup-icon">🎁</div>
+			<h2 class="reward-popup-title" id="reward-popup-title">Récompense !</h2>
+			<p class="reward-popup-message" id="reward-popup-message"></p>
+			<button class="reward-popup-btn" id="reward-popup-close">OK</button>
 		</div>
-	</footer>
+	</div>
 
 	<script src="shop.js"></script>
+
 </body>
 </html>
