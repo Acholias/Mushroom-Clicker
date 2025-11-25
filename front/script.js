@@ -16,7 +16,6 @@ let mushroomsPerSecond = 0;
 let playerName = localStorage.getItem('mushroomPlayerName') || 'Vous';
 let currentDifficulty = localStorage.getItem('mushroomDifficulty') || 'facile';
 
-// Afficher les infos au chargement
 console.log('=== MUSHROOM CLICKER ===');
 console.log(`Joueur : ${playerName}`);
 console.log(`Difficulté : ${currentDifficulty}`);
@@ -38,11 +37,11 @@ const difficultySettings = {
 		icon: '⚡',
 		costMultiplier: 2.5,
 		goldMushroomEnabled: true,
-		blueMushroomEnabled: false,
-		fortuneWheelEnabled: false,
+		blueMushroomEnabled: true,
+		fortuneWheelEnabled: true,
 		goldMushroomChance: 0.00005,
 		blueMushroomChance: 0.00005,
-		cashChance: 0.01
+		cashChance: 0.015
 	},
 	extreme: {
 		name: 'Extrême',
@@ -53,7 +52,7 @@ const difficultySettings = {
 		fortuneWheelEnabled: true,
 		goldMushroomChance: 0,
 		blueMushroomChance: 0,
-		cashChance: 0.01
+		cashChance: 0.015
 	},
 	cauchemar: {
 		name: 'Cauchemar',
@@ -61,10 +60,10 @@ const difficultySettings = {
 		costMultiplier: 10,
 		goldMushroomEnabled: false,
 		blueMushroomEnabled: false,
-		fortuneWheelEnabled: false,
+		fortuneWheelEnabled: true,
 		goldMushroomChance: 0,
 		blueMushroomChance: 0,
-		cashChance: 0.001
+		cashChance: 0.0015
 	}
 };
 
@@ -113,10 +112,7 @@ function generateLeaderboard() {
 			score: generateRandomScore(i, 24)
 		});
 	}
-	
-	// Trier par score décroissant
 	leaderboard.sort((a, b) => b.score - a.score);
-	
 	return leaderboard;
 }
 

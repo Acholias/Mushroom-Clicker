@@ -22,7 +22,7 @@ const wheelRewards = {
     { icon: "💎", label: "Cash +90",    type: "bonus",   action: { cash: 90 } },
     { icon: "⚡", label: "+40% Champignons", type: "bonus",   action: { mushroomsPercent: 40 } },
     { icon: "🎁", label: "Cash +60",    type: "bonus",   action: { cash: 60 } },
-    { icon: "🌟", label: "+30% Champignons", type: "bonus",   action: { mushroomsPercent: 30 } },
+    { icon: "🌟", label: "+30% Champignons", type: "bonus",   action: { ushroomsPercent: 30 } },
     { icon: "😢", label: "-15% Champignons", type: "malus",   action: { mushroomsPercent: -15 } },
     { icon: "💸", label: "Cash -40",    type: "malus",   action: { cash: -40 } }
   ],
@@ -283,7 +283,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		spinButton.disabled = true;
 		spinButton.style.opacity = '0.6';
 		
-		// Rotation aléatoire (entre 5 et 10 tours complets + angle aléatoire)
 		const minRotation = 360 * 5;
 		const maxRotation = 360 * 10;
 		const randomRotation = minRotation + Math.random() * (maxRotation - minRotation);

@@ -173,7 +173,7 @@ body
 	margin: 0 0 18px 0;
 }
 
-/* Roue de la Fortune */
+/* Roue de la fortune */
 .fortune-section
 {
 	display: flex;
@@ -208,6 +208,7 @@ body
 	max-width: 260px;
 }
 
+/* bloc pour la legende des items de la roue */ 
 .legend-title
 {
 	font-family: 'Comic Sans MS', cursive, sans-serif;
