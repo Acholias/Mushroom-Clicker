@@ -1,4 +1,3 @@
-
 const playerName = localStorage.getItem('mushroomPlayerName') || 'Vous';
 const totalMushrooms = localStorage.getItem('mushroomTotalEver') || 0;
 const totalClicks = localStorage.getItem('mushroomTotalClicks') || 0;
