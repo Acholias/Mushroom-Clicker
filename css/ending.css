@@ -1,0 +1,30 @@
+.body
+{
+	background-image: url(../img/background.png);
+}
+
+.ending-container
+{
+	min-height: 100vh;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+
+footer
+{
+    text-align: center;
+    font-size: 11px;
+    color:  #434242;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+} 
+
+.link-credits
+{
+    font-size: 11px;
+}
